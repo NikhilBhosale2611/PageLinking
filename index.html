@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Linking</title>
+    <style>
+        *{
+            font-size: 50px;
+            font-family: cambria;
+        }
+        .nav{
+            background-color: black;
+        }
+        .nav a{
+            color: white;
+            text-decoration: none;
+            padding: 20px;
+        }
+    </style>
+    <script>
+        function find(){
+            console.log("fun")
+            event.preventDefault();
+            let num = document.getElementById("num");
+            let ans = document.getElementById("ans");
+            if(num.value < 0){
+                ans.innerHTML = "negatine numbers";
+            }
+            else if(num.value == ""){
+                ans.innerHTML = "You did not enter value";
+                num.focus()
+            }
+            else{
+                if(num.value % 2 == 0){
+                    ans.innerHTML = "Even";
+                }
+                else{
+                    ans.innerHTML = "Odd";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <center>
+    <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+    </div>
+    <h1>Even Odd Finder</h1>
+    <form onsubmit="find()">
+        <input type="number" name="" id="num">
+        <input type="submit" value="Click Me">
+    </form>
+    <h1 id="ans"></h1>
+</center>
+    
+</body>
+</html>
